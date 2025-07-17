@@ -1,0 +1,16 @@
+name: Issue Slack Notification
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+    
+      - name: Send Slack Notification
+        run:  "${{ github.event. issue. title }}"
